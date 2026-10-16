@@ -1,0 +1,53 @@
+name: MoonFolderPlan checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    env:
+      MOONBIT_INSTALL_VERSION: '0.10.14+7d59c7ec9'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned MoonBit on Linux
+        if: runner.os == 'Linux'
+        run: |
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
+      - name: Install pinned MoonBit on Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Invoke-RestMethod https://cli.moonbitlang.com/install/powershell.ps1 | Invoke-Expression
+          "$env:USERPROFILE\.moon\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+      - name: Versions and core checks
+        run: |
+          moon version --all
+          moon update
+          moon check --deny-warn --target all
+          moon build --deny-warn --target all
+          moon test --deny-warn --target all
+          moon run examples/demo
+      - name: Physical files and failure recovery
+        run: |
+          moon build cmd/files --target js --release --deny-warn
+          python scripts/verify_files.py
+          node scripts/verify_host.cjs
+          node scripts/render_demo.cjs
+      - name: Source and interface consistency
+        run: |
+          moon fmt
+          moon info
+          git diff --exit-code

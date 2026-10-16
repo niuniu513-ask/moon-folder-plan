@@ -1,0 +1,8 @@
+import {
+  "niuniu513-ask/moon-folder-plan" @folder,
+  "moonbitlang/core/env",
+}
+
+pkgtype(kind: "executable")
+
+supported_targets = "+js"

@@ -1,0 +1,5 @@
+import {
+  "niuniu513-ask/moon-folder-plan" @folder,
+}
+
+pkgtype(kind: "executable")

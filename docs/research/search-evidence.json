@@ -1,0 +1,158 @@
+{
+  "module_count": 2945,
+  "endpoint": "https://mooncakes.io/api/v0/modules",
+  "date": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "unavailable_readmes": [
+    "chenbimo/moonbit (404)"
+  ],
+  "inspected_readmes": [
+    "AlexenderSokolov/moonportcheck",
+    "bzhangui/moonrestore",
+    "wenlittle/MoonEvidence",
+    "CAIMEOX/circular"
+  ],
+  "nearby_modules": [
+    {
+      "name": "AlexenderSokolov/moonportcheck",
+      "version": "0.2.0",
+      "yanked": false,
+      "yanked_reason": null,
+      "license": "Apache-2.0",
+      "repository": "https://github.com/AlexenderSokolov/moonportcheck",
+      "keywords": [
+        "paths",
+        "portability",
+        "windows",
+        "cli"
+      ],
+      "description": "Deterministic Windows portability checks for directory trees and path manifests.",
+      "is_new": false,
+      "created_at": "2026-10-01T06:38:59.081285"
+    },
+    {
+      "name": "bzhangui/moonrestore",
+      "version": "0.1.0",
+      "yanked": false,
+      "yanked_reason": null,
+      "license": "Apache-2.0",
+      "repository": "https://github.com/bzhangui/moonrestore",
+      "keywords": [
+        "backup",
+        "restore",
+        "integrity",
+        "deduplication"
+      ],
+      "description": "Verifiable incremental backups with content-addressed storage and safe restore, powered by MoonBit.",
+      "is_new": true,
+      "created_at": "2026-10-09T14:18:17.095571"
+    },
+    {
+      "name": "chensuiyi/fsx",
+      "version": "0.3.0",
+      "yanked": false,
+      "yanked_reason": null,
+      "license": "MIT",
+      "repository": "https://github.com/chenbimo/moonbit",
+      "keywords": [
+        "fs",
+        "file",
+        "atomic",
+        "fsync",
+        "rotate"
+      ],
+      "description": "Durable file operations for MoonBit: atomic write (fsync+rename), mkdir_p, append, chmod, rotation and flock",
+      "is_new": false,
+      "created_at": "2026-10-06T15:01:10.23397"
+    },
+    {
+      "name": "JingLan0v0/moonrow",
+      "version": "0.1.0",
+      "yanked": false,
+      "yanked_reason": null,
+      "license": "Apache-2.0",
+      "repository": "https://github.com/JingLan0v0/MoonBit",
+      "keywords": [
+        "csv",
+        "diff",
+        "data",
+        "cli"
+      ],
+      "description": "Deterministic, key-based CSV snapshot comparison library and CLI in MoonBit.",
+      "is_new": false,
+      "created_at": "2026-09-22T06:25:27.961966"
+    }
+  ],
+  "saved_index_sha256": "C3A29E290564DCCACBC7A33051E4D9B494852A022F3CD2520735FD0F5C1EF0E7",
+  "github_queries": [
+    {
+      "status": "ok",
+      "results": [],
+      "query": "MoonBit file organizer",
+      "limit": 20
+    },
+    {
+      "status": "ok",
+      "results": [],
+      "query": "MoonBit batch rename",
+      "limit": 20
+    },
+    {
+      "status": "ok",
+      "results": [],
+      "query": "MoonBit file sorting",
+      "limit": 20
+    },
+    {
+      "status": "ok",
+      "results": [],
+      "query": "MoonBit file organization",
+      "limit": 20
+    },
+    {
+      "status": "ok",
+      "results": [],
+      "query": "MoonBit organize files undo",
+      "limit": 20
+    },
+    {
+      "status": "ok",
+      "results": [],
+      "query": "organizer language:MoonBit",
+      "limit": 20
+    },
+    {
+      "status": "ok",
+      "results": [
+        {
+          "description": "MoonBit 可信证据包工具：创建、验证、篡改定位与 Hyperledger Fabric 摘要存证，提供 CLI、浏览器工作台和多后端测试。",
+          "fullName": "wenlittle/MoonEvidence",
+          "url": "https://github.com/wenlittle/MoonEvidence"
+        }
+      ],
+      "query": "文件整理 MoonBit in:name,description,readme",
+      "limit": 20
+    },
+    {
+      "status": "ok",
+      "results": [],
+      "query": "MoonFolderPlan",
+      "limit": 20
+    }
+  ],
+  "scope": "Metadata, listed GitHub repository searches and selected READMEs; finite scope, no global uniqueness proof",
+  "rejected_topics": [
+    {
+      "counterpart": "AlexenderSokolov/moonportcheck",
+      "topic": "portable path preflight"
+    },
+    {
+      "counterparts": [
+        "JingLan0v0/moonrow",
+        "ago3x/moonledger"
+      ],
+      "topic": "keyed table comparison"
+    }
+  ],
+  "conclusion": "No same complete classification-preview/batch-copy/verified-undo workflow identified in returned evidence; helper overlaps and search gaps remain"
+}

@@ -1,0 +1,86 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "niuniu513-ask/moon-folder-plan"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn ascii_fold(String) -> String
+
+pub fn default_rules() -> Array[Rule]
+
+pub fn plan(Array[Entry], rules? : Array[Rule], include_hidden? : Bool) -> Plan raise PlanError
+
+pub fn plan_snapshot(String) -> Plan raise PlanError
+
+// Errors
+pub suberror PlanError {
+  InvalidInput(String)
+  LimitExceeded(String)
+} derive(@debug.Debug)
+pub fn PlanError::output(Self, &Logger) -> Unit
+pub fn PlanError::to_repr(Self) -> @debug.Repr
+pub fn PlanError::to_string(Self) -> String
+pub impl Show for PlanError
+
+// Types and methods
+pub(all) struct CopyItem {
+  source : String
+  destination : String
+  category : String
+  size : Int64
+  renamed : Bool
+} derive(Eq, @debug.Debug)
+pub fn CopyItem::equal(Self, Self) -> Bool
+pub fn CopyItem::not_equal(Self, Self) -> Bool
+pub fn CopyItem::to_repr(Self) -> @debug.Repr
+
+pub(all) struct Entry {
+  name : String
+  size : Int64
+  kind : EntryKind
+} derive(Eq, @debug.Debug)
+pub fn Entry::equal(Self, Self) -> Bool
+pub fn Entry::not_equal(Self, Self) -> Bool
+pub fn Entry::to_repr(Self) -> @debug.Repr
+
+pub(all) enum EntryKind {
+  File
+  Directory
+  Symlink
+  Other
+} derive(Eq, @debug.Debug)
+pub fn EntryKind::equal(Self, Self) -> Bool
+pub fn EntryKind::not_equal(Self, Self) -> Bool
+pub fn EntryKind::to_repr(Self) -> @debug.Repr
+
+pub struct Plan {
+  items : Array[CopyItem]
+  skipped : Array[Skipped]
+  total_bytes : Int64
+}
+pub fn Plan::items(Self) -> Array[CopyItem]
+pub fn Plan::skipped(Self) -> Array[Skipped]
+pub fn Plan::to_json(Self) -> Json
+pub fn Plan::total_bytes(Self) -> Int64
+
+pub(all) struct Rule {
+  extension : String
+  category : String
+} derive(Eq, @debug.Debug)
+pub fn Rule::equal(Self, Self) -> Bool
+pub fn Rule::not_equal(Self, Self) -> Bool
+pub fn Rule::to_repr(Self) -> @debug.Repr
+
+pub(all) struct Skipped {
+  name : String
+  reason : String
+} derive(Eq, @debug.Debug)
+pub fn Skipped::equal(Self, Self) -> Bool
+pub fn Skipped::not_equal(Self, Self) -> Bool
+pub fn Skipped::to_repr(Self) -> @debug.Repr
+
+// Type aliases
+
+// Traits

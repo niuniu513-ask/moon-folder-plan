@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-16",
+  "endpoint": "https://mooncakes.io/api/v0/modules",
+  "module_count": 3038,
+  "snapshot_sha256": "369810868adfaf0e7958edec0e71a38f1c4da45f64b1835166acc2b450b4aba0",
+  "inspected_current_readmes": [
+    "AlexenderSokolov/moonportcheck",
+    "bzhangui/moonrestore (0.2.0 README)",
+    "wenlittle/MoonEvidence"
+  ],
+  "inspected_published_package": "chensuiyi/fsx@0.3.0 README and documented API",
+  "purpose_queries_no_results": [
+    "MoonBit file organizer",
+    "organizer language:MoonBit",
+    "MoonBit file sorting",
+    "MoonBit batch rename"
+  ],
+  "chinese_query_hit": "wenlittle/MoonEvidence",
+  "conclusion": "No same-purpose organizer identified in finite evidence. Not proof of eligibility or zero overlap.",
+  "current_status": "Selected by user; first genuine source snapshot prepared for GitHub. No manufactured history; fewer than 10 effective commits means formal initial-review submission is incomplete."
+}
